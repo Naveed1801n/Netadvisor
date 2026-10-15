@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@layer base{body{@apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;font-family:Inter,ui-sans-serif,system-ui,sans-serif}:focus-visible{@apply outline-2 outline-offset-2 outline-indigo-500}}
+@layer components{
+.card{@apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900}
+.btn{@apply inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 disabled:opacity-50}
+.btn2{@apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800}
+.inp{@apply w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900}
+.sel{@apply rounded-xl border-2 border-slate-200 bg-white p-4 text-left transition dark:border-slate-800 dark:bg-slate-900}
+.sel-on{@apply border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40}
+.muted{@apply text-sm text-slate-500 dark:text-slate-400}
+.th{@apply px-3 py-2 text-left text-xs font-semibold text-slate-500 dark:text-slate-400}
+.td{@apply border-t border-slate-200 px-3 py-2 align-top dark:border-slate-800}
+}
+input[type=range].rng{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;--c:#4f46e5;--t:#cbd5e1}
+.dark input[type=range].rng{--c:#818cf8;--t:#334155}
+.rng::-webkit-slider-runnable-track{height:8px;border-radius:9999px;background:linear-gradient(to right,var(--c) var(--p),var(--t) var(--p))}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-7px;border-radius:50%;background:#fff;border:3px solid var(--c);box-shadow:0 1px 4px rgb(0 0 0/.3);transition:transform .15s,box-shadow .15s}
+.rng::-moz-range-track{height:8px;border-radius:9999px;background:var(--t)}
+.rng::-moz-range-progress{height:8px;border-radius:9999px;background:var(--c)}
+.rng::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--c);transition:transform .15s}
+.rng:hover::-webkit-slider-thumb,.rng:hover::-moz-range-thumb{transform:scale(1.12)}
+.rng:active::-webkit-slider-thumb,.rng:active::-moz-range-thumb{transform:scale(1.2)}
+.rng:focus-visible{outline:none}
+.rng:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgb(99 102 241/.4)}
+.rng:focus-visible::-moz-range-thumb{box-shadow:0 0 0 5px rgb(99 102 241/.4)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

@@ -1,0 +1,10 @@
+import test from "node:test";import assert from "node:assert/strict";import {cleanAnswers,cleanFeedback,cleanSessions,cleanTheme} from "./storage.js";import {DEFAULT} from "./defaults.js";
+test("missing, null and wrongly typed answers fall back to defaults",()=>{for(const x of [undefined,null,"x",42,[],{}])assert.deepEqual(cleanAnswers(x),{...DEFAULT});});
+test("an old answer object missing fields is repaired",()=>{const a=cleanAnswers({done:true});assert.equal(a.done,true);assert.ok(Array.isArray(a.acts)&&a.u>=1&&a.size>=200);});
+test("out-of-range and invalid values are clamped or replaced",()=>{const a=cleanAnswers({use:"mars",u:999,d:-5,acts:["browse","hack"],size:"abc",bm:10,bu:1e9,prio:"x",done:"yes"});
+ assert.equal(a.use,"home");assert.equal(a.u,30);assert.equal(a.d,1);assert.deepEqual(a.acts,["browse"]);assert.equal(a.size,DEFAULT.size);assert.equal(a.bm,300);assert.equal(a.bu,50000);assert.equal(a.prio,"bal");assert.equal(a.done,false);});
+test("saved areas above the 5,000 sq ft limit are clamped",()=>{assert.equal(cleanAnswers({size:6000}).size,5000);});
+test("sessions and feedback must be arrays of valid objects",()=>{assert.deepEqual(cleanSessions({}),[]);assert.deepEqual(cleanSessions("x"),[]);assert.deepEqual(cleanFeedback({a:1}),[]);
+ const s=cleanSessions([null,{id:1,name:"A",answers:{u:4},pick:"p",m:5,u:6},7]);assert.equal(s.length,1);assert.equal(s[0].answers.done,true);
+ const f=cleanFeedback([{clear:9,useful:"x",follow:"Perhaps",name:"N".repeat(100),review:"r"}]);assert.equal(f[0].clear,5);assert.equal(f[0].useful,0);assert.equal(f[0].follow,"Yes");assert.equal(f[0].name.length,60);});
+test("theme accepts only light or dark",()=>{assert.equal(cleanTheme("dark"),"dark");assert.equal(cleanTheme("purple"),"light");assert.equal(cleanTheme(null),"light");});
