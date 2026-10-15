@@ -1,95 +1,307 @@
-# NetAdvisor
+<div align="center">
 
-**A network setup recommender for homes, shops, offices and labs.** Answer five questions and NetAdvisor estimates the internet speed you need, then ranks listed internet plans and equipment bundles against your budget, space and priorities, with the reasons shown.
+# 🌐 NetAdvisor
 
-> Prototype for a college research project. Prices, plans and availability are estimates from public listings and must be verified with the provider before buying. NetAdvisor does not connect to routers or provider systems.
+### Find the right internet setup for your home — without the guesswork.
 
-## Features
+**NetAdvisor** is a network setup recommendation app that helps users explore internet plans, compare networking hardware, estimate setup needs, and learn networking fundamentals in one place.
 
-- **Find My Internet:** a five-step wizard (place, people and devices, activities, space and budget, priority) with validated number fields.
-- **Recommendations:** best match plus alternatives from other providers, speed, space and budget bars, a "Why this recommendation?" explanation, provider review confidence, extra hardware list, security tips by OSI layer, CSV export and print.
-- **No-fit handling:** if nothing meets every constraint, it says so and shows the closest options with their limits.
-- **Compare Providers:** search, filters, sorting and side-by-side comparison of up to three plans, plus review and support evidence per provider.
-- **Hardware Catalog:** searchable cards with pictures, price ranges, sorting and the equipment bundles the engine ranks.
-- **Network Troubleshooting:** a step-by-step flow for six common problems.
-- **Learn Networking:** 18 beginner topics, the seven OSI layers with tips for your setup, and a searchable dictionary.
-- **Saved Sessions and Feedback:** save, rename, reopen and delete results; star ratings and optional reviews. Stored in the browser only.
-- **Settings:** light and dark themes, data controls.
+<p>
+  <img src="https://img.shields.io/badge/React-UI-61DAFB?logo=react&logoColor=20232A" alt="React badge" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=222" alt="JavaScript badge" />
+  <img src="https://img.shields.io/badge/Responsive-Design-6C5CE7" alt="Responsive design badge" />
+  <img src="https://img.shields.io/badge/Status-In%20Development-orange" alt="Project status badge" />
+</p>
 
-## Tech stack
+<p>
+  <a href="#-features">Features</a> •
+  <a href="#-screenshots">Screenshots</a> •
+  <a href="#-getting-started">Get Started</a> •
+  <a href="#-how-it-works">How It Works</a> •
+  <a href="#-project-structure">Project Structure</a> •
+  <a href="#-roadmap">Roadmap</a>
+</p>
 
-React 18, Vite 6, Tailwind CSS 4, React Router 7 (hash routing), Recharts 3, Framer Motion 11, Lucide icons. Tests use Node's built-in test runner. Linting uses ESLint with React, hooks and accessibility rules.
+</div>
 
-## Getting started
+---
 
-Requires Node 20 or newer.
+## 📌 About the Project
+
+Choosing an internet plan is not only about selecting the highest speed. The right setup also depends on your budget, home size, number of connected devices, coverage needs, and compatible networking equipment.
+
+NetAdvisor brings these considerations together in a guided experience. Users can enter their requirements, review suitable options, compare plans, explore hardware, and learn the networking concepts behind their choices.
+
+> **Project note:** ISP prices, availability, plan details, ratings, and coverage should be treated as estimates or sample data unless they are verified against the provider. NetAdvisor is a decision-support tool, not a guarantee of service availability.
+
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🧭 Guided Setup Wizard
+Answer questions about your household, connected devices, coverage requirements, speed needs, and budget.
+
+</td>
+<td width="50%">
+
+### 🎯 Personalized Recommendations
+Rank candidate internet plans and hardware based on the requirements entered by the user.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### ⚖️ Plan Comparison
+Review plan details, estimated costs, speeds, and trade-offs to make a more informed choice.
+
+</td>
+<td width="50%">
+
+### 🧰 Hardware Catalogue
+Explore networking equipment such as routers, mesh systems, ONTs, access points, and switches.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 📚 Learn Networking
+Build foundational knowledge of networks and explore the seven layers of the OSI model.
+
+</td>
+<td width="50%">
+
+### 🛠️ Troubleshooting Guidance
+Use guided tips to understand common connectivity issues and possible next steps.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 💾 Saved Sessions & Feedback
+Keep track of supported saved-session data and share feedback, depending on the configured app features.
+
+</td>
+<td width="50%">
+
+### 📱 Responsive Interface
+Designed to make the main workflow usable across desktop, tablet, and mobile screen sizes.
+
+</td>
+</tr>
+</table>
+
+## 🖼️ Screenshots
+
+The screenshots below show examples of the current interface. Replace them with updated screenshots whenever the UI changes.
+
+### 1. Find My Internet — Budget and Requirements
+
+![Find My Internet budget controls](assets/screenshots/find-my-internet-budget.png)
+
+### 2. Coverage and Space Configuration
+
+![Coverage and space controls](assets/screenshots/find-my-internet-coverage.png)
+
+### 3. Recommendation Results
+
+![Internet plan recommendation results](assets/screenshots/recommendations.png)
+
+### 4. Learn Networking — OSI Model
+
+![Learn Networking OSI model](assets/screenshots/learn-networking-osi.png)
+
+### 5. Networking Layers and Learning Content
+
+![Networking layers learning content](assets/screenshots/learn-networking-layers.png)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before running the project, install:
+
+- **Node.js** — use a current LTS version compatible with the project.
+- **npm** — included with Node.js.
+- **Git** — to clone and manage the source code.
+
+Check your installations:
+
+```bash
+node --version
+npm --version
+git --version
+```
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Naveed1801n/Netadvisor.git
+```
+
+Move into the project directory:
+
+```bash
+cd Netadvisor
+```
+
+Install dependencies:
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
 ```
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Production build in `dist/` |
-| `npm run preview` | Serve the production build locally |
-| `npm test` | Run the 32 logic tests (engine, data, storage, CSV) |
-| `npm run lint` | Lint the code |
-| `npm run check` | Lint, test and build (also run by CI) |
-| `npm run images` | Optional: download Creative Commons hardware photos (see below) |
+Start the development server:
 
-## How the recommendation works
-
-1. **Estimate the speed needed** from activities, people and devices. Only part of a large group is assumed active at once, and the busiest activity per person counts most.
-2. **Apply hard limits.** Remove every plan and equipment pair that misses the speed, coverage, device count, monthly budget or equipment budget.
-3. **Rank what is left with TOPSIS** over monthly cost and equipment cost (relative to your budgets), speed fit, provider review score, coverage and device fit, support score, and price data confidence. Speed and coverage stop earning credit once your need is comfortably met, so extra speed is not rewarded. The weights come from your chosen priority and are shown on the results page.
-4. **If nothing qualifies,** show the closest options with each limitation spelled out.
-
-The fit score is a relative ranking inside the list, not a quality rating of a provider. No provider is hardcoded.
-
-## Project structure
-
-```
-src/
-  components/   Layout, dialogs (focus trapped), hardware pictures, chart, shared UI
-  context/      Theme, wizard answers, saved sessions and feedback (LocalStorage)
-  data/         Plans, provider reviews, support scores, sources, equipment, learning content
-  pages/        One lazy-loaded file per page
-  utils/        Recommendation engine, saved-data validation, CSV, keyboard helpers, tests
-scripts/        Optional hardware photo downloader
-public/hardware Place real product photos here (see README.txt in that folder)
-.github/        CI workflow (lint, test, build)
+```bash
+npm run dev
 ```
 
-## Data and honesty notes
+Open the local URL printed in your terminal (Vite commonly uses `http://localhost:5173`).
 
-- Plan data is a snapshot from 14 October 2026. Only the ACT and Hi Reach plans come from Warangal listings (third-party sites). Other providers come from 2026 guides or tariff sheets for other places, and BSNL from a Chennai-circle sheet.
-- Review and support scores are judgements from benchmarks and complaint sites, from different years and places. They are not a Warangal survey. Where no repair-time data was found, support is scored cautiously at 2.75.
-- Equipment prices and specifications are sample values.
-- Hardware pictures are drawn illustrations. To show real photos, add files named `router.jpg`, `switch.jpg`, `nas.jpg` and so on to `public/hardware/` (the list is in that folder's README). Only use photos you have the right to use. `npm run images` can download Creative Commons photos from Wikimedia Commons and record credits; check its results by hand, because that script has not been tested against the live service.
+### Production Build
 
-To improve results, edit `src/data/plans.js` with verified, current Warangal plans and equipment prices.
+Build the app:
 
-## Accessibility
+```bash
+npm run build
+```
 
-Keyboard operable throughout: dialogs and the mobile menu trap focus and close with Escape, menus close on outside click, tab lists support arrow keys, fields have labels and error messages, and animation respects the reduced-motion setting.
+Preview the production build locally:
 
-## Privacy
+```bash
+npm run preview
+```
 
-Everything is stored in the browser (LocalStorage). Nothing is sent to a server. Feedback names and reviews are optional and stay on the device. Use the Settings page to delete saved data.
+> If your project uses different scripts, check the `scripts` section in `package.json` and update these commands to match.
 
-## Deployment
+## 🧠 How It Works
 
-`npm run build` creates a static site in `dist/`. Hash routing means it works on any static host without server rules. For GitHub Pages under a repository path, set `base: "/your-repo-name/"` in `vite.config.js` first.
+1. **Enter requirements** — provide the budget, coverage area, speed expectations, and number of devices.
+2. **Evaluate options** — the recommendation logic evaluates available plans and relevant equipment.
+3. **Review recommendations** — compare the suggested option with alternatives and inspect the reasons behind the ranking.
+4. **Explore hardware** — review equipment options and compatibility considerations.
+5. **Learn and troubleshoot** — use the learning and troubleshooting sections to understand your network and common issues.
 
-## Known limitations
+### Recommendation principles
 
-- Cheap adequate plans win often, and the data holds only a few, so one or two providers can dominate some priorities. Adding verified Warangal plans is the real fix.
-- Areas above 5,000 sq ft are not supported.
-- Tests cover the logic only; there are no component tests.
-- Data is not shared between devices and there are no accounts.
+A useful recommendation should consider several factors together:
 
-## License
+- Budget fit, including recurring and one-time costs.
+- Whether the plan can meet the requested speed.
+- Coverage requirements and the need for additional access points or mesh equipment.
+- The expected number of connected devices.
+- Compatibility between the selected plan and hardware.
+- Clear explanations of trade-offs and unmet requirements.
 
-Mohammed Naveed Ullah @2026
+A recommendation score is a **relative fit score**, not a guarantee of real-world ISP performance. If no available option meets every constraint, the app should explain that and show the closest alternatives rather than presenting an unsuitable option as a perfect match.
+
+## 🧱 Project Structure
+
+The exact structure may vary with the current implementation. A typical React/Vite project looks like this:
+
+```text
+Netadvisor/
+├── public/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Main app pages or views
+│   ├── data/             # Provider and hardware data
+│   ├── utils/            # Recommendation and helper logic
+│   ├── App.jsx
+│   └── main.jsx
+├── assets/
+│   └── screenshots/      # README screenshots
+├── index.html
+├── package.json
+└── README.md
+```
+
+Use the actual folders in your repository as the source of truth; do not create unused folders just to match this example.
+
+## 🧰 Technology
+
+The project is built as a web application. Confirm the exact packages and versions in `package.json`.
+
+- **React** — component-based UI.
+- **JavaScript** — application logic.
+- **CSS / project styling system** — layout, responsive styles, and visual design.
+- **Vite** — development server and build tool, if configured in the project.
+
+Additional libraries such as routing, icon sets, charting, or animation tools should be listed here only if they are installed and used by the current codebase.
+
+## 🗺️ Roadmap
+
+- [ ] Improve recommendation accuracy and explain ranking factors.
+- [ ] Make budget constraints and over-budget options clear.
+- [ ] Add or refine product images in the hardware catalogue.
+- [ ] Expand beginner-friendly networking lessons before the OSI model.
+- [ ] Improve mobile usability and accessibility.
+- [ ] Add tests for recommendation scenarios and important user flows.
+- [ ] Keep screenshots and setup instructions updated with each major release.
+
+## 🧪 Testing Checklist
+
+Before publishing changes, verify:
+
+- [ ] The development server starts successfully.
+- [ ] The production build completes.
+- [ ] Wizard controls update their displayed values correctly.
+- [ ] Recommendations respond to changes in budget and network requirements.
+- [ ] Over-budget or unsuitable plans are clearly identified.
+- [ ] Hardware filters and detail actions work, if provided.
+- [ ] Learning navigation and OSI layer content work.
+- [ ] The layout works on desktop and mobile.
+- [ ] No API keys, passwords, or private environment files are committed.
+
+## 🤝 Contributing
+
+Suggestions and improvements are welcome.
+
+1. Fork the repository.
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m "Add: describe your change"
+   ```
+
+4. Push your branch:
+
+   ```bash
+   git push origin feature/your-feature
+   ```
+
+5. Open a Pull Request describing the change and how you tested it.
+
+## 🔐 Security and Data
+
+- Never commit API keys, passwords, access tokens, or private environment files.
+- Keep `.env` files out of Git and provide a sanitized `.env.example` only if environment variables are needed.
+- Explain clearly when any data is sample, estimated, or stored locally.
+- Do not claim live ISP availability or pricing unless the app actually verifies it from a reliable source.
+
+## 📄 License
+
+No license is specified here. Add a `LICENSE` file and name the license in this section if you intend to publish the project under an open-source license.
+
+---
+
+<div align="center">
+
+**Built with curiosity for better home networking. 🌐**
+
+[⬆ Back to top](#-netadvisor)
+
+</div>
