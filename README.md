@@ -92,4 +92,4 @@ Everything is stored in the browser (LocalStorage). Nothing is sent to a server.
 
 ## License
 
-Add a license before publishing (for example MIT) and your name here.
+Mohammed Naveed Ullah @2026
