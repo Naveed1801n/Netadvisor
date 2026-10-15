@@ -111,11 +111,8 @@ The screenshots below show examples of the current interface. Replace them with 
 
 ![Internet plan recommendation results](assets/screenshots/recommendations.png)
 
-### 4. Learn Networking — OSI Model
 
-![Learn Networking OSI model](assets/screenshots/learn-networking-osi.png)
-
-### 5. Networking Layers and Learning Content
+### 4. Networking Layers and Learning Content
 
 ![Networking layers learning content](assets/screenshots/learn-networking-layers.png)
 
@@ -294,7 +291,7 @@ Suggestions and improvements are welcome.
 
 ## 📄 License
 
-No license is specified here. Add a `LICENSE` file and name the license in this section if you intend to publish the project under an open-source license.
+This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for the full license text.
 
 ---
 
