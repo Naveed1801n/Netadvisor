@@ -290,7 +290,7 @@ Suggestions and improvements are welcome.
 - Do not claim live ISP availability or pricing unless the app actually verifies it from a reliable source.
 
 ## 📄 License
-
+Mohammed Naveed Ullah@2026
 This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for the full license text.
 
 ---
